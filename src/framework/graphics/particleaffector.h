@@ -32,7 +32,7 @@ public:
     ParticleAffector();
 
     void update(float elapsedTime);
-    virtual bool load(const OTMLNodePtr& node);
+    virtual void load(const OTMLNodePtr& node);
     virtual void updateParticle(const ParticlePtr&, float) {}
 
     bool hasFinished() { return m_finished; }
@@ -45,7 +45,7 @@ protected:
 
 class GravityAffector : public ParticleAffector {
 public:
-    bool load(const OTMLNodePtr& node);
+    void load(const OTMLNodePtr& node);
     void updateParticle(const ParticlePtr& particle, float elapsedTime);
 
 private:
@@ -54,7 +54,7 @@ private:
 
 class AttractionAffector : public ParticleAffector {
 public:
-    bool load(const OTMLNodePtr& node);
+    void load(const OTMLNodePtr& node);
     void updateParticle(const ParticlePtr& particle, float elapsedTime);
 
 private:
