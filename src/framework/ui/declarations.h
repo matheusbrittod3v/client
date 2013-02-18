@@ -33,6 +33,8 @@ class UIBoxLayout;
 class UIHorizontalLayout;
 class UIVerticalLayout;
 class UIGridLayout;
+class UIAnchor;
+class UIAnchorGroup;
 class UIAnchorLayout;
 class UIParticles;
 
@@ -44,8 +46,11 @@ typedef stdext::shared_object_ptr<UIBoxLayout> UIBoxLayoutPtr;
 typedef stdext::shared_object_ptr<UIHorizontalLayout> UIHorizontalLayoutPtr;
 typedef stdext::shared_object_ptr<UIVerticalLayout> UIVerticalLayoutPtr;
 typedef stdext::shared_object_ptr<UIGridLayout> UIGridLayoutPtr;
+typedef stdext::shared_object_ptr<UIAnchor> UIAnchorPtr;
+typedef stdext::shared_object_ptr<UIAnchorGroup> UIAnchorGroupPtr;
 typedef stdext::shared_object_ptr<UIAnchorLayout> UIAnchorLayoutPtr;
 
 typedef std::deque<UIWidgetPtr> UIWidgetList;
+typedef std::vector<UIAnchorPtr> UIAnchorList;
 
 #endif
