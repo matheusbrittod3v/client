@@ -23,8 +23,7 @@
 #ifndef CONFIGMANAGER_H
 #define CONFIGMANAGER_H
 
-#include "declarations.h"
-#include <framework/otml/declarations.h>
+#include "config.h"
 
 // @bindsingleton g_configs
 class ConfigManager
@@ -32,25 +31,18 @@ class ConfigManager
 public:
     ConfigManager();
 
-    bool load(const std::string& file);
-    bool save();
-    void clear();
+    ConfigPtr getSettings();
+    ConfigPtr get(const std::string& file);
 
-    void set(const std::string& key, const std::string& value);
-    void setList(const std::string& key, const std::vector<std::string>& list);
-    std::string get(const std::string& key);
-    std::vector<std::string> getList(const std::string& key);
+    ConfigPtr loadSettings(const std::string file);
+    ConfigPtr load(const std::string& file);
+    bool unload(const std::string& file);
 
-    void setNode(const std::string& key, const OTMLNodePtr& node);
-    void mergeNode(const std::string& key, const OTMLNodePtr& node);
-    OTMLNodePtr getNode(const std::string& key);
-
-    bool exists(const std::string& key);
-    void remove(const std::string& key);
+protected:
+    ConfigPtr m_settings;
 
 private:
-    std::string m_fileName;
-    OTMLDocumentPtr m_confsDoc;
+    std::list<ConfigPtr> m_configs;
 };
 
 extern ConfigManager g_configs;
