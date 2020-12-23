@@ -28,5 +28,6 @@
  // widely used headers
 #include "const.h"
 #include "position.h"
+#include "features.h"
 
 #endif
