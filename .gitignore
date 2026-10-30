@@ -332,3 +332,10 @@ android/app/.cxx/
 android/.gradle/
 android/build/
 luajit-src/
+
+# Local credentials and generated dependencies
+.env
+.env.*
+!.env.example
+node_modules/
+vendor/
